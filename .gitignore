@@ -1,0 +1,23 @@
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore packages folder
+packages/
+
+# Ignore user-specific project settings
+*.vbproj.user
+
+# Ignore IDE-specific files (optional)
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+Profiles/
+4th Sem Final Project Presentation.pptx
+4th Sem Final Project Report.docx
+4th Sem Final Project Report.pdf
+4th Sem Presentation Script.docx
+commit_untracked_files.ps1
