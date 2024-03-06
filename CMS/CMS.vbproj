@@ -1,0 +1,588 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0CBAD7C1-CFFF-4FCA-9B30-8681E9BF5CD9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CMS.My.MyApplication</StartupObject>
+    <RootNamespace>CMS</RootNamespace>
+    <AssemblyName>CMS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\istaq\OneDrive\Desktop\APP\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>CMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>CMS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>137BC151727311E55952D7E3B99BE37BEB123525</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CMS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="CanteenManagementSystem">
+      <HintPath>..\CanteenManagementSystem\obj\Debug\CanteenManagementSystem.exe</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MailKit, Version=4.7.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
+      <HintPath>packages\MailKit.4.7.1.1\lib\net47\MailKit.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=4.7.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>packages\MimeKit.4.7.1\lib\net47\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Formats.Asn1, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Formats.Asn1.8.0.1\lib\net462\System.Formats.Asn1.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About_Us_Page.Designer.vb">
+      <DependentUpon>About_Us_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="About_Us_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact_Us_Page.Designer.vb">
+      <DependentUpon>Contact_Us_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contact_Us_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard_Page.Designer.vb">
+      <DependentUpon>Dashboard_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Page.Designer.vb">
+      <DependentUpon>Inventory_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuManage_Page.Designer.vb">
+      <DependentUpon>MenuManage_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuManage_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderDetails_Page.Designer.vb">
+      <DependentUpon>OrderDetails_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetails_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders_Page.Designer.vb">
+      <DependentUpon>Orders_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Orders_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments_Page.Designer.vb">
+      <DependentUpon>Payments_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payments_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Products_Page.Designer.vb">
+      <DependentUpon>Products_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Products_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suppliers_Page.Designer.vb">
+      <DependentUpon>Suppliers_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Suppliers_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analytics_Page.Designer.vb">
+      <DependentUpon>Analytics_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Analytics_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateInventory.Designer.vb">
+      <DependentUpon>UpdateInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMenuitem.Designer.vb">
+      <DependentUpon>AddMenuitem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddMenuitem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSupplier.Designer.vb">
+      <DependentUpon>AddSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Page.Designer.vb">
+      <DependentUpon>Admin_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Billing_Page.Designer.vb">
+      <DependentUpon>Billing_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Billing_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChartHelper.vb" />
+    <Compile Include="ClockControl.Designer.vb">
+      <DependentUpon>ClockControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ClockControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CMSDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.Designer.vb">
+      <DependentUpon>AddProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.Designer.vb">
+      <DependentUpon>ForgetPassword.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgetPasswordChange.Designer.vb">
+      <DependentUpon>ForgetPasswordChange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPasswordChange.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMenuitems.Designer.vb">
+      <DependentUpon>UpdateMenuitems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateMenuitems.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateProduct.Designer.vb">
+      <DependentUpon>UpdateProduct.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProduct.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateSupplier.Designer.vb">
+      <DependentUpon>UpdateSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateUser.Designer.vb">
+      <DependentUpon>UpdateUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Onlinepayment_page.Designer.vb">
+      <DependentUpon>Onlinepayment_page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Onlinepayment_page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plate_Page.Designer.vb">
+      <DependentUpon>Plate_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Plate_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GlobalVariables.vb" />
+    <Compile Include="Home_Page.Designer.vb">
+      <DependentUpon>Home_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Home_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_Page.Designer.vb">
+      <DependentUpon>Menu_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register.Designer.vb">
+      <DependentUpon>Register.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Register.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoundButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Thankyou_Page.Designer.vb">
+      <DependentUpon>Thankyou_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Thankyou_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users_Page.Designer.vb">
+      <DependentUpon>Users_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Users_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome_Page.Designer.vb">
+      <DependentUpon>Welcome_Page.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_Page.Designer.vb">
+      <DependentUpon>Login_Page.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login_Page.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About_Us_Page.resx">
+      <DependentUpon>About_Us_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact_Us_Page.resx">
+      <DependentUpon>Contact_Us_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard_Page.resx">
+      <DependentUpon>Dashboard_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Page.resx">
+      <DependentUpon>Inventory_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuManage_Page.resx">
+      <DependentUpon>MenuManage_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderDetails_Page.resx">
+      <DependentUpon>OrderDetails_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orders_Page.resx">
+      <DependentUpon>Orders_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments_Page.resx">
+      <DependentUpon>Payments_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Products_Page.resx">
+      <DependentUpon>Products_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suppliers_Page.resx">
+      <DependentUpon>Suppliers_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analytics_Page.resx">
+      <DependentUpon>Analytics_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateInventory.resx">
+      <DependentUpon>UpdateInventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMenuitem.resx">
+      <DependentUpon>AddMenuitem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSupplier.resx">
+      <DependentUpon>AddSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Page.resx">
+      <DependentUpon>Admin_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing_Page.resx">
+      <DependentUpon>Billing_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProduct.resx">
+      <DependentUpon>AddProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClockControl.resx">
+      <DependentUpon>ClockControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgetPassword.resx">
+      <DependentUpon>ForgetPassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgetPasswordChange.resx">
+      <DependentUpon>ForgetPasswordChange.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateMenuitems.resx">
+      <DependentUpon>UpdateMenuitems.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateProduct.resx">
+      <DependentUpon>UpdateProduct.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateSupplier.resx">
+      <DependentUpon>UpdateSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateUser.resx">
+      <DependentUpon>UpdateUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Onlinepayment_page.resx">
+      <DependentUpon>Onlinepayment_page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plate_Page.resx">
+      <DependentUpon>Plate_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home_Page.resx">
+      <DependentUpon>Home_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login_Page.resx">
+      <DependentUpon>Login_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_Page.resx">
+      <DependentUpon>Menu_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register.resx">
+      <DependentUpon>Register.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thankyou_Page.resx">
+      <DependentUpon>Thankyou_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users_Page.resx">
+      <DependentUpon>Users_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome_Page.resx">
+      <DependentUpon>Welcome_Page.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CMSDataSet.xsc">
+      <DependentUpon>CMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CMSDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CMSDataSet.xss">
+      <DependentUpon>CMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CMS_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Page enhanced.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Page1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registerpage4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CMS_Icon.ico" />
+    <Content Include="Icon.ico" />
+    <None Include="Resources\Logout_Icon.png" />
+    <None Include="Resources\CMS_Logo.png" />
+    <None Include="Resources\Eye_Close.png" />
+    <None Include="Resources\Eye_Open.png" />
+    <None Include="Resources\loginpage2.png" />
+    <None Include="Resources\StartingPage.png" />
+    <None Include="Resources\Pending.png" />
+    <None Include="Resources\Cancelled.png" />
+    <None Include="Resources\Completed.png" />
+    <None Include="Resources\Menu_Icon.png" />
+    <None Include="Resources\Orders_Icon.png" />
+    <None Include="Resources\Inventory_Icon.png" />
+    <None Include="Resources\Product_Icon.png" />
+    <None Include="Resources\Supplier_Icon.png" />
+    <None Include="Resources\Users_Icon.png" />
+    <None Include="Resources\Payments_Icon.png" />
+    <None Include="Resources\Analytics_Icon.png" />
+    <None Include="Resources\Dashboard_Icon.png" />
+    <None Include="Resources\SearchImage.jpg" />
+    <None Include="Resources\DefaultProductImage.jpg" />
+    <None Include="Resources\QR-Payment.jpg" />
+    <None Include="Resources\Icon.png" />
+    <None Include="Resources\delete2.png" />
+    <None Include="Resources\delete1.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\Admin_Page.png" />
+    <None Include="Resources\Screenshot 2024-06-12 190532.png" />
+    <None Include="Resources\Homepage1.png" />
+    <None Include="Resources\Homepage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
