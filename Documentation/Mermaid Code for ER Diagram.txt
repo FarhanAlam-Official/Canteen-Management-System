@@ -1,0 +1,96 @@
+erDiagram
+  Users {
+    int user_id PK
+    varchar username
+    varchar password
+    varchar user_type
+    int status
+    datetime created_date
+  }
+  User_Details {
+    int user_detail_id PK
+    int user_id FK
+    varchar first_name
+    varchar last_name
+    int age
+    varchar gender
+    datetime created_date
+  }
+  Orders {
+    int order_id PK
+    int customer_id FK
+    decimal total_amount
+    decimal discount
+    varchar status
+    datetime order_date
+    int payment_id FK
+  }
+  Order_Details {
+    int order_detail_id PK
+    int order_id FK
+    int product_id FK
+    int category_id FK
+    int quantity
+    decimal price
+  }
+  Products {
+    int product_id PK
+    varchar product_name
+    text description
+    decimal price
+    varchar image_url
+    int category_id FK
+    int status
+  }
+  Categories {
+    int category_id PK
+    int status
+    varchar category_name
+  }
+  Sales {
+    int sales_id PK
+    int order_id FK
+    datetime order_date
+    decimal order_amount
+  }
+  Payments {
+    int payment_id PK
+    int order_id FK
+    int customer_id FK
+    decimal amount
+    varchar payment_mode
+    varchar status
+    datetime payment_date
+  }
+  Inventory {
+    int inventory_id PK
+    int product_id FK
+    int quantity_in_stock
+    datetime last_updated
+  }
+  Suppliers {
+    int supplier_id PK
+    varchar supplier_name
+    varchar contact_name
+    varchar contact_phone
+    int status
+    varchar contact_email
+  }
+  Inventory_Suppliers {
+    int inventory_supplier_id PK
+    int inventory_id FK
+    int supplier_id FK
+  }
+
+  Users ||--o{ User_Details : has
+  Users ||--o{ Orders : places
+  Users ||--o{ Payments : makes
+  Orders ||--|{ Order_Details : contains
+  Orders ||--|{ Payments : is_paid_by
+  Orders ||--o| Sales : results_in
+  Order_Details ||--|{ Products : describes
+  Order_Details ||--|{ Categories : categorizes
+  Products ||--|{ Inventory : is_stored_in
+  Products ||--|{ Categories : belongs_to
+  Inventory ||--o{ Inventory_Suppliers : is_supplied_by
+  Suppliers ||--o{ Inventory_Suppliers : supplies
