@@ -1,0 +1,24 @@
+graph TD
+    %% External Entities %%
+    User["User"] -->|Register/Login| P1["User Management"]
+    User -->|Place Orders/View History| P2["Order Management"]
+    User -->|Make Payments| P2
+    
+    Admin["Admin"] -->|Manage Users/Products/Orders| P1
+    Admin -->|Generate Reports| P5["Reporting"]
+    
+    Supplier["Supplier"] -->|Manage Inventory| P4["Inventory Management"]
+
+    %% Processes %%
+    P1["User Management"] -->|User Data| D1["User Data"]
+    P2["Order Management"] -->|Order Data| D2["Order Data"]
+    P3["Product Management"] -->|Product Data| D3["Product Data"]
+    P4["Inventory Management"] -->|Inventory Data| D4["Inventory Data"]
+    P5["Reporting"] -->|Report Data| D5["Report Data"]
+
+    %% Data Flows %%
+    D1 -->|User Info| P1
+    D2 -->|Order Info| P2
+    D3 -->|Product Info| P3
+    D4 -->|Inventory Info| P4
+    D5 -->|Report Info| P5
