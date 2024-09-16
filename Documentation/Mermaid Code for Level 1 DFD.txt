@@ -1,0 +1,64 @@
+graph TD
+    %% External Entities %%
+    User["User"] -->|Register/Login/Manage Profile| P1["User Management"]
+    User -->|Create/View/Cancel Orders| P2["Order Management"]
+    User -->|Make Payments| P5["Payment Management"]
+
+    Admin["Admin"] -->|Manage Users/Products/Orders| P1
+    Admin -->|Generate/View Reports| P6["Reporting"]
+    
+    Supplier["Supplier"] -->|Update/Check Inventory| P4["Inventory Management"]
+    
+    %% Processes %%
+    P1["User Management"] -->|User Registration| P11["Register"]
+    P1 -->|User Authentication| P12["Login"]
+    P1 -->|Manage User Profile| P13["Manage Profile"]
+    P1 -->|Logout| P14["Logout"]
+
+    P2["Order Management"] -->|Order Creation| P21["Create Order"]
+    P2 -->|Order Viewing| P22["View Orders"]
+    P2 -->|Order Cancellation| P23["Cancel Order"]
+
+    P3["Product Management"] -->|Adding Products| P31["Add Products"]
+    P3 -->|Updating Products| P32["Update Products"]
+    P3 -->|Removing Products| P33["Remove Products"]
+
+    P4["Inventory Management"] -->|Updating Inventory| P41["Update Inventory"]
+    P4 -->|Checking Inventory| P42["Check Inventory"]
+
+    P5["Payment Management"] -->|Payment Processing| P51["Initiate Payment"]
+    P5 -->|Refund Processing| P52["Refund Payment"]
+
+    P6["Reporting"] -->|Report Generation| P61["Generate Reports"]
+    P6 -->|Report Viewing| P62["View Reports"]
+
+    %% Data Stores %%
+    D1["User Data"]
+    D2["Order Data"]
+    D3["Product Data"]
+    D4["Inventory Data"]
+    D5["Payment Data"]
+    D6["Report Data"]
+
+    %% Data Flows %%
+    P11 -->|User Info| D1
+    P12 -->|User Info| D1
+    P13 -->|User Info| D1
+    P21 -->|Order Info| D2
+    P22 -->|Order Info| D2
+    P23 -->|Order Info| D2
+    P31 -->|Product Info| D3
+    P32 -->|Product Info| D3
+    P33 -->|Product Info| D3
+    P41 -->|Inventory Info| D4
+    P42 -->|Inventory Info| D4
+    P51 -->|Payment Info| D5
+    P52 -->|Payment Info| D5
+    P61 -->|Report Info| D6
+    P62 -->|Report Info| D6
+    D1 -->|User Info| P13
+    D2 -->|Order Info| P22
+    D3 -->|Product Info| P32
+    D4 -->|Inventory Info| P42
+    D5 -->|Payment Info| P51
+    D6 -->|Report Info| P61
