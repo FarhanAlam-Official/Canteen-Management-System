@@ -1,0 +1,130 @@
+classDiagram
+    class Users {
+       
+        +int user_id PK
+        +varchar username UNIQUE
+        +varchar password
+        +varchar user_type
+        +int status
+        +datetime created_date DEFAULT GETDATE()
+    }
+    note for Users "Represents user credentials and roles."
+
+    class User_Details {
+       
+        +int user_detail_id PK
+        +int user_id FK
+        +varchar first_name
+        +varchar last_name
+        +int age
+        +varchar gender
+        +datetime created_date DEFAULT GETDATE()
+    }
+    note for User_Details "Stores additional information for each user."
+
+    class Orders {
+       
+        +int order_id PK
+        +int customer_id FK
+        +decimal total_amount
+        +decimal discount
+        +varchar status
+        +datetime order_date DEFAULT GETDATE()
+        +int payment_id FK
+    }
+    note for Orders "Records customer orders and statuses."
+
+    class Order_Details {
+        
+        +int order_detail_id PK
+        +int order_id FK
+        +int product_id FK
+        +int category_id FK
+        +int quantity
+        +decimal price
+    }
+    note for Order_Details "Details specific items in each order."
+
+    class Products {
+        
+        +int product_id PK
+        +varchar(100) product_name
+        +text description
+        +decimal(10,2) price
+        +varchar(255) image_url
+        +int category_id FK
+        +int status
+    }
+    note for Products "Contains product information and categories."
+
+    class Categories {
+        <<Entity>>
+        +int category_id PK
+        +int status
+        +varchar(50) category_name
+    }
+    note for Categories "Defines categories for organizing products."
+
+    class Sales {
+        <<Entity>>
+        +int sales_id PK
+        +int order_id FK
+        +datetime order_date
+        +decimal(10,2) order_amount
+    }
+    note for Sales "Tracks sales records linked to orders."
+
+    class Payments {
+        <<Entity>>
+        +int payment_id PK
+        +int order_id FK
+        +int customer_id FK
+        +decimal(10,2) amount
+        +varchar(20) payment_mode
+        +varchar(20) status
+        +datetime payment_date DEFAULT GETDATE()
+    }
+    note for Payments "Manages payment details for orders."
+
+    class Inventory {
+        <<Entity>>
+        +int inventory_id PK
+        +int product_id FK
+        +int quantity_in_stock
+        +datetime last_updated DEFAULT GETDATE()
+    }
+    note for Inventory "Keeps track of stock levels for products."
+
+    class Suppliers {
+        <<Entity>>
+        +int supplier_id PK
+        +varchar(100) supplier_name
+        +varchar(100) contact_name
+        +varchar(15) contact_phone
+        +int status
+        +varchar(100) contact_email
+    }
+    note for Suppliers "Information about product suppliers."
+
+    class Inventory_Suppliers {
+        <<Entity>>
+        +int inventory_supplier_id PK
+        +int inventory_id FK
+        +int supplier_id FK
+    }
+    note for Inventory_Suppliers "Associates inventory items with suppliers."
+
+    %% Relationships %%
+    Users "1" --> "1" User_Details : user_id
+    Users "1" --> "M" Orders : customer_id
+    Users "1" --> "M" Payments : customer_id
+    Orders "1" --> "M" Order_Details : order_id
+    Orders "1" --> "1" Payments : payment_id
+    Orders "1" --> "1" Sales : order_id
+    Order_Details "M" --> "1" Products : product_id
+    Order_Details "M" --> "1" Categories : category_id
+    Products "1" --> "M" Order_Details : product_id
+    Products "1" --> "1" Inventory : product_id
+    Products "1" --> "1" Categories : category_id
+    Inventory "1" --> "M" Inventory_Suppliers : inventory_id
+    Suppliers "1" --> "M" Inventory_Suppliers : supplier_id
