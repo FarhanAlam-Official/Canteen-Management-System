@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>README - VB.NET Management System</title>
-</head>
-<body>
-
 <h1 align="center">VB.NET Management System</h1>
 
 <p align="center">
@@ -95,12 +86,15 @@
 <p>This project is licensed under the MIT License. See <code>LICENSE</code> for more information.</p>
 
 <h2 id="contact">📬 Contact</h2>
-<p>Project Link: <a href="https://github.com/yourusername/Yagdrasil">Yagdrasil Repository</a></p>
-<p>For any inquiries, please contact <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
-
+<p>For questions, suggestions, or collaboration inquiries, please reach out:</p>
+<ul>
+    <li><strong>GitHub :</strong> <a href="https://github.com/FarhanAlam-Official" target="_blank">Farhan Alam</a></li>
+    <li><strong>Email &nbsp; &nbsp;:</strong> 
+        <a href="mailto:thefarhanalam01@gmail.com">Farhan Alam</a> 
+        | 
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=thefarhanalam01@gmail.com" target="_blank">Open in Gmail</a>
+    </li>
+</ul>
 <hr>
 
-<p align="center">Made with ❤️ by <a href="https://github.com/yourusername">Your Name</a></p>
-
-</body>
-</html>
+<p align="center">Made with ❤️ by <a href="https://github.com/FarhanAlam-Official">Farhan Alam</a></p>
